@@ -23,7 +23,7 @@ func TestNewClient(t *testing.T) {
 	url := "https://api.gaurun.io"
 	cli, err := NewClient(url, nil)
 	if err != nil {
-		t.Error("an error occured", err)
+		t.Error("an error occurred", err)
 	}
 	if url != cli.Endpoint.String() {
 		t.Errorf("failed to test - expected = %s, actual = %s", url, cli.Endpoint.String())
@@ -45,7 +45,7 @@ func TestClient_PushMulti(t *testing.T) {
 
 	cli, err := NewClient(srv.URL, nil)
 	if err != nil {
-		t.Error("an error occured", err)
+		t.Error("an error occurred", err)
 	}
 
 	p := &Payload{
@@ -54,7 +54,7 @@ func TestClient_PushMulti(t *testing.T) {
 
 	err = cli.PushMulti(context.Background(), p)
 	if err != nil {
-		t.Error("an error occured", err)
+		t.Error("an error occurred", err)
 	}
 
 	p.Notifications = p.Notifications[:0]
@@ -78,7 +78,7 @@ func TestClient_do(t *testing.T) {
 
 	cli, err := NewClient("https://api.gaurun.io", nil)
 	if err != nil {
-		t.Error("an error occured", err)
+		t.Error("an error occurred", err)
 	}
 
 	err = cli.do(http.MethodPost, "/push", math.NaN())
