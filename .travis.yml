@@ -2,6 +2,7 @@ sudo: false
 
 language: go
 go:
+  - 1.7.6
   - 1.8.3
   - tip
 
@@ -20,4 +21,5 @@ script:
   - go test -v -race -covermode=atomic -coverprofile=coverage.txt
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)a
+
