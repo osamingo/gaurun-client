@@ -1,11 +1,11 @@
 package gaurun
 
 import (
+	"math"
 	"net/http"
 	"net/http/httptest"
-	"testing"
-
 	"strings"
+	"testing"
 
 	"github.com/mercari/gaurun/gaurun"
 	"go.uber.org/zap"
@@ -71,5 +71,19 @@ func TestClient_PushMulti(t *testing.T) {
 	wantPrefix := "gaurun: failed to send http request"
 	if !strings.HasPrefix(err.Error(), wantPrefix) {
 		t.Errorf("failed to test - want_prefix = %s, actual = %s", wantPrefix, err.Error())
+	}
+}
+
+func TestClient_do(t *testing.T) {
+
+	cli, err := NewClient("https://api.gaurun.io", nil)
+	if err != nil {
+		t.Error("an error occured", err)
+	}
+
+	err = cli.do(http.MethodPost, "/push", math.NaN())
+	expected := "gaurun: failed to marshal json - body = NaN: json: unsupported value: NaN"
+	if expected != err.Error() {
+		t.Errorf("failed to test - expected = %s, actual = %s", expected, err.Error())
 	}
 }
