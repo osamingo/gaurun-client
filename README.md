@@ -9,7 +9,7 @@
 
 ## About
 
-[Gaurun](https://github.com/mercari/gaurun) Client written in Golang.
+[Gaurun](https://github.com/mercari/gaurun) Client written in Go.
 
 ## Install
 
@@ -20,3 +20,4 @@ $ go get -u github.com/osamingo/gaurun-client
 ## License
 
 Released under the [MIT License](https://github.com/osamingo/gaurun-client/blob/master/LICENSE).
+
