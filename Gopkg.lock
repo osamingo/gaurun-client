@@ -20,12 +20,6 @@
   revision = "1a6ccbeaae3f56aa0058f5491382cb21726e214e"
 
 [[projects]]
-  name = "github.com/davecgh/go-spew"
-  packages = ["spew"]
-  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
-  version = "v1.1.0"
-
-[[projects]]
   name = "github.com/fukata/golang-stats-api-handler"
   packages = ["."]
   revision = "90f0b59102629831cc109845475a8d77043412ec"
@@ -49,18 +43,6 @@
   version = "v0.8.0"
 
 [[projects]]
-  name = "github.com/pmezard/go-difflib"
-  packages = ["difflib"]
-  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
-  version = "v1.0.0"
-
-[[projects]]
-  name = "github.com/stretchr/testify"
-  packages = ["assert","require"]
-  revision = "69483b4bd14f5845b5a1e55bca19e954e827f1d0"
-  version = "v1.1.4"
-
-[[projects]]
   name = "go.uber.org/atomic"
   packages = ["."]
   revision = "4e336646b2ef9fc6e47be8e21594178f98e5ebcf"
@@ -76,7 +58,7 @@
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","http2","http2/hpack","idna","lex/httplex"]
-  revision = "8663ed5da4fd087c3cfb99a996e628b72e2f0948"
+  revision = "1f9224279e98554b6a6432d4dd998a739f8b2b7c"
 
 [[projects]]
   branch = "master"
@@ -88,11 +70,11 @@
   branch = "master"
   name = "golang.org/x/text"
   packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
-  revision = "6353ef0f924300eea566d3438817aa4d3374817e"
+  revision = "2bf8f2a19ec09c670e931282edfe6567f6be21c9"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "109ef5e1bd366d97e63ecf3207424f77a4f690ac6fae90ea48d3005eb8781e53"
+  inputs-digest = "0232915715739658fecf3fe8e9b3e492a0ae80446a7c9d2075e2ba52840144af"
   solver-name = "gps-cdcl"
   solver-version = 1
