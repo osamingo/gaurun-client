@@ -55,10 +55,10 @@ func (cli *Client) PushMulti(c context.Context, ps ...*Payload) error {
 
 // Push sends a payload to gaurun server.
 func (cli *Client) Push(c context.Context, p *Payload) error {
-	return cli.do(http.MethodPost, "/push", p)
+	return cli.do(c, http.MethodPost, "/push", p)
 }
 
-func (cli *Client) do(method, spath string, body interface{}) error {
+func (cli *Client) do(c context.Context, method, spath string, body interface{}) error {
 	bin, err := json.Marshal(body)
 	if err != nil {
 		return errors.Wrapf(err, "gaurun: failed to marshal json - body = %+v", body)
@@ -68,6 +68,9 @@ func (cli *Client) do(method, spath string, body interface{}) error {
 	req, err := http.NewRequest(method, u.String(), bytes.NewReader(bin))
 	if err != nil {
 		return errors.Wrapf(err, "gaurun: failed to generate new http request - method = %s, path = %s, body = %+v", method, spath, body)
+	}
+	if c != nil {
+		req = req.WithContext(c)
 	}
 	req.Header.Set("User-Agent", userAgent)
 	req.Header.Set("Content-type", "application/json")
