@@ -2,79 +2,139 @@
 
 
 [[projects]]
+  digest = "1:289dd4d7abfb3ad2b5f728fbe9b1d5c1bf7d265a3eb9ef92869af1f7baba4c7a"
   name = "github.com/BurntSushi/toml"
   packages = ["."]
+  pruneopts = ""
   revision = "b26d9c308763d68093482582cea63d69be07a0f0"
   version = "v0.3.0"
 
 [[projects]]
+  digest = "1:529387bee72d49e7c1ef9a54371fd3cf951c5e94879ec53f3adc476c1a8efac4"
   name = "github.com/RobotsAndPencils/buford"
-  packages = ["payload","payload/badge","push"]
+  packages = [
+    "payload",
+    "payload/badge",
+    "push",
+  ]
+  pruneopts = ""
   revision = "1589c179b764ddceb204a439d9bf366f04c55f9b"
   version = "v0.12.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:666d6afa04b47ffbb66a1ff499668e20fa8111ed80c7b8eac508ba48597c4d1c"
   name = "github.com/client9/reopen"
   packages = ["."]
+  pruneopts = ""
   revision = "1a6ccbeaae3f56aa0058f5491382cb21726e214e"
 
 [[projects]]
+  digest = "1:467297b87f09684ce7650f2a074a05c13f91e91519606dacbb2170750b1128c0"
   name = "github.com/fukata/golang-stats-api-handler"
   packages = ["."]
+  pruneopts = ""
   revision = "90f0b59102629831cc109845475a8d77043412ec"
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:c2c9c3ba8f7303d58ccb43b8da2130789025c2da920f482160b130c4b414423d"
   name = "github.com/lestrrat/go-server-starter"
   packages = ["listener"]
+  pruneopts = ""
   revision = "901cec093d58ca36652e8d7906e4bd3e32793801"
 
 [[projects]]
+  digest = "1:5a1ea8b67d4365daddf8330ba917cf2fb2c9dc77ee2bc6fa7419d4701b2ba106"
   name = "github.com/mercari/gaurun"
-  packages = ["gaurun","gcm"]
+  packages = [
+    "gaurun",
+    "gcm",
+  ]
+  pruneopts = ""
   revision = "20a59c870c933eecd818e6413768caea22ef89b9"
   version = "v0.8.1"
 
 [[projects]]
+  digest = "1:7365acd48986e205ccb8652cc746f09c8b7876030d53710ea6ef7d0bd0dcd7ca"
   name = "github.com/pkg/errors"
   packages = ["."]
+  pruneopts = ""
   revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
   version = "v0.8.0"
 
 [[projects]]
+  digest = "1:53a6fbacf8dce8fc9cbd4fab6a56eb169be7cb79b9fe601a152d6d9af68312bb"
   name = "go.uber.org/atomic"
   packages = ["."]
+  pruneopts = ""
   revision = "4e336646b2ef9fc6e47be8e21594178f98e5ebcf"
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:c514e18573b26f615ec4bc688393989399b8045ff9b7879cea4b5aaa4420f834"
   name = "go.uber.org/zap"
-  packages = [".","buffer","internal/bufferpool","internal/color","internal/exit","internal/multierror","zapcore"]
+  packages = [
+    ".",
+    "buffer",
+    "internal/bufferpool",
+    "internal/color",
+    "internal/exit",
+    "internal/multierror",
+    "zapcore",
+  ]
+  pruneopts = ""
   revision = "9cabc84638b70e564c3dab2766efcb1ded2aac9f"
   version = "v1.4.1"
 
 [[projects]]
   branch = "master"
+  digest = "1:5f29ff80e013bffb9330d6c4c2fbbe4e8d7389fbcfaf993d612f3c99848c96ed"
   name = "golang.org/x/net"
-  packages = ["context","http2","http2/hpack","idna","lex/httplex"]
+  packages = [
+    "context",
+    "http2",
+    "http2/hpack",
+    "idna",
+    "lex/httplex",
+  ]
+  pruneopts = ""
   revision = "1f9224279e98554b6a6432d4dd998a739f8b2b7c"
 
 [[projects]]
   branch = "master"
+  digest = "1:4da86ac1c764621cb32bf025ed158811543958707c1b3e74bf127d26db012d52"
   name = "golang.org/x/sync"
   packages = ["errgroup"]
+  pruneopts = ""
   revision = "f52d1811a62927559de87708c8913c1650ce4f26"
 
 [[projects]]
   branch = "master"
+  digest = "1:b35ed33edad0dde773b8d00442addedf8bcb52dcab4473e834d467ebc7b9f9b7"
   name = "golang.org/x/text"
-  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  packages = [
+    "internal/gen",
+    "internal/triegen",
+    "internal/ucd",
+    "secure/bidirule",
+    "transform",
+    "unicode/bidi",
+    "unicode/cldr",
+    "unicode/norm",
+    "unicode/rangetable",
+  ]
+  pruneopts = ""
   revision = "2bf8f2a19ec09c670e931282edfe6567f6be21c9"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "0232915715739658fecf3fe8e9b3e492a0ae80446a7c9d2075e2ba52840144af"
+  input-imports = [
+    "github.com/mercari/gaurun/gaurun",
+    "github.com/pkg/errors",
+    "go.uber.org/zap",
+    "golang.org/x/sync/errgroup",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
