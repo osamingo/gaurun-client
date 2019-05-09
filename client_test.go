@@ -1,6 +1,7 @@
 package gaurun
 
 import (
+	"context"
 	"math"
 	"net/http"
 	"net/http/httptest"
@@ -9,7 +10,6 @@ import (
 
 	"github.com/mercari/gaurun/gaurun"
 	"go.uber.org/zap"
-	"golang.org/x/net/context"
 )
 
 func TestNewClient(t *testing.T) {

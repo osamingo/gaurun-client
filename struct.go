@@ -16,13 +16,17 @@ type (
 	}
 	// A Notification has gaurun notification data.
 	Notification struct {
-		Tokens   []string `json:"token"`
-		Platform Platform `json:"platform"`
-		Message  string   `json:"message"`
+		// Common
+		Tokens     []string `json:"token"`
+		Platform   Platform `json:"platform"`
+		Message    string   `json:"message"`
+		Identifier string   `json:"identifier,omitempty"`
+		// Android
+		AndroidSetting
+		// iOS
+		IOSSetting
 		// Metadata
 		ID uint64 `json:"seq_id,omitempty"`
-		AndroidSetting
-		IOSSetting
 	}
 	// An AndroidSetting has setting fields for FCM/GCM.
 	AndroidSetting struct {
@@ -32,7 +36,10 @@ type (
 	}
 	// An IOSSetting has setting fields for APNs.
 	IOSSetting struct {
+		Title            string    `json:"title,omitempty"`
+		Subtitle         string    `json:"subtitle,omitempty"`
 		Badge            int       `json:"badge,omitempty"`
+		Category         string    `json:"category,omitempty"`
 		Sound            string    `json:"sound,omitempty"`
 		ContentAvailable bool      `json:"content_available,omitempty"`
 		MutableContent   bool      `json:"mutable_content,omitempty"`
