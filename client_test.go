@@ -14,7 +14,7 @@ import (
 
 func TestNewClient(t *testing.T) {
 
-	expected := "gaurun: failed to parse url - endpoint = dummy: parse dummy: invalid URI for request"
+	expected := "gaurun: failed to parse url - endpoint = dummy: parse \"dummy\": invalid URI for request"
 	_, err := NewClient("dummy", nil)
 	if expected != err.Error() {
 		t.Errorf("failed to test - expected = %s, actual = %s", expected, err.Error())
