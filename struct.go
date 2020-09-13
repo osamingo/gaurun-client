@@ -19,33 +19,8 @@ type Notification struct {
 	// iOS
 	IOSSetting
 	// Metadata
-	ID uint64 `json:"seq_id,omitempty"`
-}
-
-// An AndroidSetting has setting fields for FCM/GCM.
-type AndroidSetting struct {
-	CollapseKey    string    `json:"collapse_key,omitempty"`
-	DelayWhileIdle bool      `json:"delay_while_idle,omitempty"`
-	TimeToLive     int       `json:"time_to_live,omitempty"`
-	Extend         []*Extend `json:"extend,omitempty"`
-}
-
-// An Extend is alias gaurun.ExtendJSON.
-type Extend gaurun.ExtendJSON
-
-// An IOSSetting has setting fields for APNs.
-type IOSSetting struct {
-	Title            string    `json:"title,omitempty"`
-	Subtitle         string    `json:"subtitle,omitempty"`
-	Badge            int       `json:"badge,omitempty"`
-	Category         string    `json:"category,omitempty"`
-	Sound            string    `json:"sound,omitempty"`
-	ContentAvailable bool      `json:"content_available,omitempty"`
-	MutableContent   bool      `json:"mutable_content,omitempty"`
-	Expiry           int       `json:"expiry,omitempty"`
-	Retry            int       `json:"retry,omitempty"`
-	Extend           []*Extend `json:"extend,omitempty"`
-	PushType         PushType  `json:"push_type,omitempty"`
+	ID     uint64    `json:"seq_id,omitempty"`
+	Extend []*Extend `json:"extend,omitempty"`
 }
 
 // A Platform is alias gaurun platform enum.
@@ -57,6 +32,27 @@ const (
 	// PlatformIOS is enum for APNs.
 	PlatformIOS Platform = gaurun.PlatFormIos
 )
+
+// An AndroidSetting has setting fields for FCM/GCM.
+type AndroidSetting struct {
+	CollapseKey    string `json:"collapse_key,omitempty"`
+	DelayWhileIdle bool   `json:"delay_while_idle,omitempty"`
+	TimeToLive     int    `json:"time_to_live,omitempty"`
+}
+
+// An IOSSetting has setting fields for APNs.
+type IOSSetting struct {
+	Title            string   `json:"title,omitempty"`
+	Subtitle         string   `json:"subtitle,omitempty"`
+	Badge            int      `json:"badge,omitempty"`
+	Category         string   `json:"category,omitempty"`
+	Sound            string   `json:"sound,omitempty"`
+	ContentAvailable bool     `json:"content_available,omitempty"`
+	MutableContent   bool     `json:"mutable_content,omitempty"`
+	Expiry           int      `json:"expiry,omitempty"`
+	Retry            int      `json:"retry,omitempty"`
+	PushType         PushType `json:"push_type,omitempty"`
+}
 
 // PushType provides enumerated values for the apns-push-type header.
 type PushType string
@@ -108,3 +104,6 @@ const (
 	// It is recommended on macOS, iOS, tvOS, and iPadOS.
 	PushTypeMdm PushType = "mdm"
 )
+
+// An Extend is alias gaurun.ExtendJSON.
+type Extend gaurun.ExtendJSON
