@@ -10,24 +10,20 @@
   version = "v0.3.0"
 
 [[projects]]
-  digest = "1:529387bee72d49e7c1ef9a54371fd3cf951c5e94879ec53f3adc476c1a8efac4"
-  name = "github.com/RobotsAndPencils/buford"
-  packages = [
-    "payload",
-    "payload/badge",
-    "push",
-  ]
-  pruneopts = ""
-  revision = "1589c179b764ddceb204a439d9bf366f04c55f9b"
-  version = "v0.12.0"
-
-[[projects]]
   branch = "master"
   digest = "1:666d6afa04b47ffbb66a1ff499668e20fa8111ed80c7b8eac508ba48597c4d1c"
   name = "github.com/client9/reopen"
   packages = ["."]
   pruneopts = ""
   revision = "1a6ccbeaae3f56aa0058f5491382cb21726e214e"
+
+[[projects]]
+  digest = "1:6098222470fe0172157ce9bbef5d2200df4edde17ee649c5d6e48330e4afa4c6"
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  pruneopts = ""
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
 
 [[projects]]
   digest = "1:467297b87f09684ce7650f2a074a05c13f91e91519606dacbb2170750b1128c0"
@@ -45,15 +41,19 @@
   revision = "901cec093d58ca36652e8d7906e4bd3e32793801"
 
 [[projects]]
-  digest = "1:5a1ea8b67d4365daddf8330ba917cf2fb2c9dc77ee2bc6fa7419d4701b2ba106"
+  digest = "1:e07b7adf1a1e6952703752ff9df44da19657b9095e8a502d9ffc8aa3a9dacd4b"
   name = "github.com/mercari/gaurun"
   packages = [
+    "buford/payload",
+    "buford/payload/badge",
+    "buford/push",
+    "buford/token",
     "gaurun",
     "gcm",
   ]
   pruneopts = ""
-  revision = "20a59c870c933eecd818e6413768caea22ef89b9"
-  version = "v0.8.1"
+  revision = "8cd34fb0c738aa6ccb8dfaa7ebeac427eff95c48"
+  version = "v0.13.0"
 
 [[projects]]
   digest = "1:7365acd48986e205ccb8652cc746f09c8b7876030d53710ea6ef7d0bd0dcd7ca"
@@ -91,13 +91,7 @@
   branch = "master"
   digest = "1:5f29ff80e013bffb9330d6c4c2fbbe4e8d7389fbcfaf993d612f3c99848c96ed"
   name = "golang.org/x/net"
-  packages = [
-    "context",
-    "http2",
-    "http2/hpack",
-    "idna",
-    "lex/httplex",
-  ]
+  packages = ["context"]
   pruneopts = ""
   revision = "1f9224279e98554b6a6432d4dd998a739f8b2b7c"
 
@@ -108,24 +102,6 @@
   packages = ["errgroup"]
   pruneopts = ""
   revision = "f52d1811a62927559de87708c8913c1650ce4f26"
-
-[[projects]]
-  branch = "master"
-  digest = "1:b35ed33edad0dde773b8d00442addedf8bcb52dcab4473e834d467ebc7b9f9b7"
-  name = "golang.org/x/text"
-  packages = [
-    "internal/gen",
-    "internal/triegen",
-    "internal/ucd",
-    "secure/bidirule",
-    "transform",
-    "unicode/bidi",
-    "unicode/cldr",
-    "unicode/norm",
-    "unicode/rangetable",
-  ]
-  pruneopts = ""
-  revision = "2bf8f2a19ec09c670e931282edfe6567f6be21c9"
 
 [solve-meta]
   analyzer-name = "dep"

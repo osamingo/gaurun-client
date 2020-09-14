@@ -14,9 +14,7 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-const version = "1.0"
-
-var userAgent = fmt.Sprintf("GaurunGoClient/%s (%s)", version, runtime.Version())
+var userAgent = fmt.Sprintf("GaurunGoClient/%s (%s)", Version, runtime.Version())
 
 // A Client for gaurun server.
 type Client struct {
