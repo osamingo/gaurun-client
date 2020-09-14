@@ -14,10 +14,18 @@ import (
 
 func TestNewClient(t *testing.T) {
 
-	expected := "gaurun: failed to parse url - endpoint = dummy: parse \"dummy\": invalid URI for request"
 	_, err := NewClient("dummy", nil)
-	if expected != err.Error() {
-		t.Errorf("failed to test - expected = %s, actual = %s", expected, err.Error())
+	if err == nil {
+		t.Error("failed to test - expected = error, actual = nil")
+	}
+
+	// the output of errors from net.Url was changed in go1.14 to quote the
+	// URL. Therefore, we'll just strip the quote until n-2 go versions have
+	// moved to error quoting.
+	errStr := strings.Replace(err.Error(), "\"", "", -1)
+	expected := "gaurun: failed to parse url - endpoint = dummy: parse dummy: invalid URI for request"
+	if errStr != expected {
+		t.Errorf("failed to test - expected = %s, actual = %s", expected, errStr)
 	}
 
 	url := "https://api.gaurun.io"
