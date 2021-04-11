@@ -50,7 +50,6 @@ type IOSSetting struct {
 	ContentAvailable bool     `json:"content_available,omitempty"`
 	MutableContent   bool     `json:"mutable_content,omitempty"`
 	Expiry           int      `json:"expiry,omitempty"`
-	Retry            int      `json:"retry,omitempty"`
 	PushType         PushType `json:"push_type,omitempty"`
 }
 
