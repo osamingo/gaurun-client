@@ -16,6 +16,10 @@ before_script:
 
 script:
   - go test -v -race -covermode=atomic -coverprofile=coverage.txt ./...
+  - cd ./v2
+  - go test -v -race -covermode=atomic -coverprofile=coverage.txt ./...
+  - cd ../v3
+  - go test -v -race -covermode=atomic -coverprofile=coverage.txt ./...
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
