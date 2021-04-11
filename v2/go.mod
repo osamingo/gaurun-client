@@ -1,4 +1,4 @@
-module github.com/matthewhartstonge/gaurun-client
+module github.com/matthewhartstonge/gaurun-client/v2
 
 go 1.16
 
