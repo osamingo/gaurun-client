@@ -38,6 +38,7 @@ type AndroidSetting struct {
 	CollapseKey    string `json:"collapse_key,omitempty"`
 	DelayWhileIdle bool   `json:"delay_while_idle,omitempty"`
 	TimeToLive     int    `json:"time_to_live,omitempty"`
+	Priority       string `json:"priority,omitempty"`
 }
 
 // An IOSSetting has setting fields for APNs.
