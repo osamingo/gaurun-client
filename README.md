@@ -10,7 +10,8 @@
 
 [Gaurun](https://github.com/mercari/gaurun) Client written in Go.
 
-Supports `gaurun@v0.13.0`
+* `gaurun-client/v3` supports `gaurun@{ v0.13.0, v0.13.1 }`.
+* `gaurun-client/v2` supports `gaurun@{ v0.10.0 - v0.13.0 }`.
 
 ## Install
 
