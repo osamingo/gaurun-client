@@ -1,4 +1,4 @@
 package gaurun
 
 // Version specifies the client version.
-const Version = "2.0.3"
+const Version = "3.0.0"
