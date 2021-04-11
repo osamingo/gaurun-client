@@ -40,10 +40,12 @@ func NewClient(endpoint string, cli *http.Client) (*Client, error) {
 // PushMulti sends payloads to gaurun server.
 func (cli *Client) PushMulti(c context.Context, ps ...*Payload) error {
 	eg, ctx := errgroup.WithContext(c)
-	for _, p := range ps {
-		eg.Go(func() error {
-			return cli.Push(ctx, p)
-		})
+	for i := range ps {
+		eg.Go(func(p *Payload) func() error {
+			return func() error {
+				return cli.Push(ctx, p)
+			}
+		}(ps[i]))
 	}
 	if err := eg.Wait(); err != nil {
 		return err
